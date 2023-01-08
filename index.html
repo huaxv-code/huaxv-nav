@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="zh-CN">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/hd.png" type="image/x-icon">
+    <title>玉子的导航栏</title>
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100%;
+            /* height: calc(100vh); */
+            background: rgba(0, 0, 0, 0.6);
+            background-image: url(./img/bgc.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: darken;
+        }
+
+        div.box {
+            background-color: #1b1b1b;
+            width: 800px;
+            height: 60px;
+            margin: 200px auto 0;
+            border-radius: 30px;
+            border: 1px solid gray;
+            transition: border 0.7s;
+        }
+
+        div.box:hover {
+            border: 1px solid white;
+            transition: border 0.7s;
+        }
+
+        .box input {
+            width: 627px;
+            height: 100%;
+            background-color: transparent;
+            border: 0;
+            /* text-align: center; */
+            color: white;
+            font-size: 16px;
+            font-family: Arial, "Microsoft YaHei";
+            outline: none;
+            float: left;
+            padding: 0 20px 0 20px;
+        }
+
+        div.bing {
+            width: 125px;
+            height: 52px;
+            float: left;
+            background: linear-gradient(to right, #26c8ef, #5786fb);
+            /* position: relative;  */
+            border-radius: 30px;
+            margin: 4px;
+            text-align: center;
+        }
+
+        div.bing p {
+            /* position: absolute; */
+            line-height: 52px;
+            height: 60%;
+            /* top: 50%;
+            transform: translate(-50%, -50%); */
+            left: 50%;
+            display: inline-block;
+            color: rgb(171, 216, 255);
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bing">
+            <p>Bing</p>
+        </div>
+        <input id="keywords" type="text" onkeydown="search(event)" autocomplete="off" autofocus>
+        <script>
+            function search(event) {
+                if (event.keyCode == "13") {
+                    console.log('你输入的内容：' + $('#keywords').val());
+                    // location.href = "https://cn.bing.com/search?q=" + $('#keywords').val();
+                    window.open("https://cn.bing.com/search?q=" + $('#keywords').val());
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
